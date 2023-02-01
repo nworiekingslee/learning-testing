@@ -1,0 +1,17 @@
+.blue-link {
+  color: blue;
+}
+
+.form-group {
+  max-width: 38rem;
+  margin: 2rem auto;
+}
+
+.form-group .checkbox-label {
+  margin-left: 1rem;
+  font-size: 1.3rem;
+}
+
+.form-group .button-wrapper {
+  margin-top: 1rem;
+}
