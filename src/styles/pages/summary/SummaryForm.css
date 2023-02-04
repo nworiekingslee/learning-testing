@@ -4,14 +4,22 @@
 
 .form-group {
   max-width: 38rem;
+  position: relative;
   margin: 2rem auto;
 }
 
 .form-group .checkbox-label {
   margin-left: 1rem;
   font-size: 1.3rem;
+  cursor: pointer;
 }
 
 .form-group .button-wrapper {
-  margin-top: 1rem;
+  margin-top: 2rem;
+}
+
+.form-group .popover {
+  padding: 1rem 3rem;
+  position: absolute;
+  right: 0;
 }
