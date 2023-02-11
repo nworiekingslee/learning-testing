@@ -54,3 +54,7 @@ test("Popover responds to hover", async () => {
   await user.unhover(termsAndCondition);
   expect(popover).not.toBeInTheDocument();
 });
+
+// Test that the option images render
+// Mock service worker
+// Mock server response for /scoops and /toppings
