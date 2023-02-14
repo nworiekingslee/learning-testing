@@ -1,4 +1,8 @@
-import { logRoles, render, screen } from "@testing-library/react";
+import {
+  logRoles,
+  render,
+  screen,
+} from "../../../test-utils/testing-library-utils";
 import Options from "../Options";
 
 test("Displays image for each scoop from the server", async () => {

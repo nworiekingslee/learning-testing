@@ -14,9 +14,63 @@
   border-radius: 1rem;
   margin: auto;
 }
+
 .option-row .option-card img {
   width: 12rem;
   height: 12rem;
   object-fit: cover;
   border-radius: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.option-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.option-total {
+  background-color: white;
+  padding: 0.6rem;
+  border-bottom: #41a444 1px solid;
+  margin-bottom: 8rem;
+}
+
+.option-total > span {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Option card style */
+
+.option-row .option-card .option-card-action-tab {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.option-row .option-card .option-card-action-tab > * {
+  flex-grow: 1;
+}
+
+.option-row .option-card .option-card-action-tab > input {
+  border: none;
+  /* max-width: 30px; */
+  flex-grow: 1.5;
+  font-weight: 500;
+  border-radius: none;
+  outline: none;
+  padding: 0 0.4rem;
+}
+
+.option-row .option-card .option-card-action-tab > button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
 }

@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react";
+import { useState, useContext, createContext } from "react";
+import { pricePerItem } from "../constants";
 
 const OrderDetails = createContext();
 
@@ -22,13 +23,9 @@ export function OrderDetailsProvider(props) {
   });
 
   function updateItemCount(itemName, newItemCount, optionType) {
-    // const newOptionCounts = { ...optionCounts };
-    // newOptionCounts[optionType][itemName] = newItemCount;
-    // setOptionCounts(newOptionCounts);
-
     setOptionCounts((prev) => ({
       ...prev,
-      [optionType]: { ...[optionType], [itemName]: newItemCount },
+      [optionType]: { ...prev[optionType], [itemName]: newItemCount },
     }));
   }
 
@@ -38,6 +35,19 @@ export function OrderDetailsProvider(props) {
       toppings: {},
     });
   }
-  const value = { optionCounts, updateItemCount };
+
+  function calculateTotal(optionType) {
+    const countsArray = Object.values(optionCounts[optionType]);
+
+    const totalCount = countsArray.reduce((total, value) => total + value, 0);
+    return totalCount * pricePerItem[optionType];
+  }
+
+  const totals = {
+    scoops: calculateTotal("scoops"),
+    toppings: calculateTotal("toppings"),
+  };
+
+  const value = { optionCounts, totals, updateItemCount, resetOrder };
   return <OrderDetails.Provider value={value} {...props} />;
 }

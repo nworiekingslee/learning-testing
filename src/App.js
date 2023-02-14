@@ -2,6 +2,7 @@ import "./App.css";
 import OrderSummary from "./pages/summary/OrderSummary";
 import { setupWorker } from "msw";
 import OrderEntry from "./pages/entry/OrderEntry";
+import { OrderDetailsProvider } from "./context/OrderDetails";
 
 if (process.env.NODE_ENV === "development") {
   const { handlers } = require("./mocks/handlers");
@@ -12,8 +13,10 @@ if (process.env.NODE_ENV === "development") {
 export default function App() {
   return (
     <div className="App">
-      <OrderEntry />
-      <OrderSummary />
+      <OrderDetailsProvider>
+        <OrderEntry />
+        <OrderSummary />
+      </OrderDetailsProvider>
     </div>
   );
 }
